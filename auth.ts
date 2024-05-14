@@ -20,7 +20,7 @@ export const { auth, signIn, signOut } = NextAuth({
           if (!employee) {
             return null;
           }
-          return null;
+          return employee;
         }
       },
     }),
