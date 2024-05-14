@@ -15,7 +15,7 @@ model Emplooye {
   secondSuername String
   age            Int
   sex            String
-  email          String
+  email          String @unique
   password       String
   salary         Int
   rol            String   @default("waiter")

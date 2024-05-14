@@ -5,6 +5,10 @@ import prisma from "@/utils/connect";
 const bcrypt = require("bcrypt");
 export const loginApi = async (req: NextRequest, res: NextResponse) => {
   try {
+    if (req.method !== "POST") {
+      return NextResponse.json({ status: "fail", message: "Invalid request" });
+    }
+
     const { email, password } = await req.json();
 
     const emplooye = prisma.emplooye.findUnique({
