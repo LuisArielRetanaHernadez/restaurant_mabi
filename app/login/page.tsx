@@ -1,6 +1,12 @@
+"use client";
+
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function PageLogin() {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <section className="w-full h-screen bg-white flex">
       <div className="w-2/3 h-[400px] m-auto rounded-md shadow-2xl shadow-blue-800 overflow-hidden flex">
@@ -15,15 +21,27 @@ export default function PageLogin() {
               placeholder="Email address"
             />
           </div>
-          <div className="mb-5 flex">
+          <div className="mb-5 flex items-center">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               className="w-full p-4 font-bold text-md text-black text-md rounded-lg outline-none"
               placeholder="Password"
             />
-            <button className="text-white py-2 px-4 rounded-md bg-blue-800"></button>
+            {showPassword ? (
+              <FontAwesomeIcon
+                className=" w-8 h-max text-cyan-900 cursor-pointer"
+                icon={faEyeSlash}
+                onClick={() => setShowPassword(false)}
+              />
+            ) : (
+              <FontAwesomeIcon
+                className=" w-8 h-max text-cyan-900 cursor-pointer"
+                icon={faEye}
+                onClick={() => setShowPassword(true)}
+              />
+            )}
           </div>
 
           <div>
