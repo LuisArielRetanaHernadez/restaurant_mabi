@@ -11,15 +11,12 @@ export const authenticate = async (
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
-          return {
-            error: "Invalid email or password",
-          };
+          return "Invalid credentials.";
+
         default:
-          return {
-            error: "An error occurred",
-          };
+          return "Something went wrong.";
       }
-      return error;
+      throw error;
     }
   }
 };
