@@ -10,7 +10,7 @@ export default function PageLogin() {
   return (
     <section className="w-full h-screen bg-white flex">
       <div className="w-5/6 md:w-2/3 h-[400px] m-auto rounded-md shadow-2xl shadow-blue-800 flex">
-        <form className="w-full md:w-1/2 text-center m-auto p-1 ">
+        <form className="w-full md:w-1/2 h-full md:h-auto text-center m-auto p-1 md:static relative ">
           <h2 className="text-blue-800 text-4xl mb-6">Login</h2>
           <div className="mb-5">
             <input
@@ -49,6 +49,13 @@ export default function PageLogin() {
               Iniciar
             </button>
           </div>
+
+          <Link
+            className="w-full py-5 rounded-tl-[100px] rounded-tr-[100px] bg-sky-600 inline-block md:hidden absolute left-0 bottom-0"
+            href=""
+          >
+            Registrar
+          </Link>
         </form>
         <div className="w-full md:w-1/2 h-full hidden md:flex p-1 bg-blue-800">
           <Link
