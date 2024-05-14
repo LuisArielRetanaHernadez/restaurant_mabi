@@ -11,16 +11,12 @@ import { authenticate } from "@/app/lib/actions";
 
 export default function PageLogin() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
-  const { pending } = useFormStatus();
 
   const [showPassword, setShowPassword] = useState(false);
   return (
     <section className="w-full h-screen bg-white flex">
       <div className="w-5/6 md:w-2/3 h-[400px] m-auto rounded-md shadow-2xl shadow-blue-800 flex">
-        <form
-          className="w-full md:w-1/2 h-full md:h-auto text-center m-auto p-1 md:static relative "
-          action={dispatch}
-        >
+        <form className="w-full md:w-1/2 h-full md:h-auto text-center m-auto p-1 md:static relative ">
           <h2 className="text-blue-800 text-4xl mb-6">Login</h2>
           <div className="mb-5">
             <input
@@ -55,10 +51,7 @@ export default function PageLogin() {
           </div>
 
           <div>
-            <button
-              aria-disabled={pending}
-              className="text-white py-2 px-3 rounded-md bg-blue-800"
-            >
+            <button className="text-white py-2 px-3 rounded-md bg-blue-800">
               Iniciar
             </button>
           </div>
