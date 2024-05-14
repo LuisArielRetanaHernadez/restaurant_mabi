@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Emplooye {
+  ID             String   @id @default(cuid()) @map("_id")
+  name           String
+  nameLast       String
+  firstSurname   String
+  secondSuername String
+  age            Int
+  sex            String
+  email          String
+  salary         Int
+  rol            String   @default("waiter")
+  Address        Address?
+}
+
+model Address {
+  ID         String   @id @default(cuid()) @map("_id")
+  Country    String
+  City       String
+  street     String
+  emplooye   Emplooye @relation(fields: [emplooyeID], references: [ID])
+  emplooyeID String   @unique
+}
