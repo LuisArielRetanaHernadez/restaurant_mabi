@@ -1,6 +1,6 @@
 import prisma from "../../utils/connect";
 
-const bcrypt = require("bcrypt");
+import bcrypt from "bcryptjs";
 
 export const fetchLoginEmplooye = async (email: string, password: string) => {
   try {
