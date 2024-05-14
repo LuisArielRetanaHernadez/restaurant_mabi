@@ -16,6 +16,7 @@ model Emplooye {
   age            Int
   sex            String
   email          String
+  password       String
   salary         Int
   rol            String   @default("waiter")
   Address        Address?
