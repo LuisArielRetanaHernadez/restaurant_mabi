@@ -1,4 +1,4 @@
-import prisma from "@/utils/connect";
+import prisma from "../../utils/connect";
 
 const bcrypt = require("bcrypt");
 
