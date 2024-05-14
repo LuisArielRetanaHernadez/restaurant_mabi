@@ -16,8 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@prisma/client": "^5.13.0",
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "next": "14.2.3",
-    "next-auth": "^5.0.0-beta.17",
+    "next-auth": "^5.0.0-beta.18",
     "react": "^18",
     "react-dom": "^18",
     "zod": "^3.23.8"
